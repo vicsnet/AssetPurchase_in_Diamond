@@ -1,4 +1,4 @@
-// SPDX-License-Identifier
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "../contracts/Diamond.sol";
 import "../contracts/facets/DiamondCutFacet.sol";
@@ -54,13 +54,13 @@ contract DiamondScript is Script, IDiamondCut{
 
         IDiamondCut(address(diamond)).diamondCut(cut, address(0x0), "");
 
-        //call a function
-        // DiamondLoupeFacet(address(diamond)).facetAddresses();
-        // vm.stopBroadcast();
+        // call a function
+        DiamondLoupeFacet(address(diamond)).facetAddresses();
+        vm.stopBroadcast();
         
 
     }
-
+// Diamond CA:0x3cBFFB0520D908d8947b6036Aeb5Ac0D08e0D8Df
      function generateSelectors(string memory _facetName)
         internal
         returns (bytes4[] memory selectors)
